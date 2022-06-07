@@ -1,11 +1,8 @@
-import time
-import jwt
+import requests
 from yacloud import yacloud
 
+encoded_token = yacloud.obtainIAMtoken()
 
-tokenJWT = 't1.9euelZqVlI6MlcmPncqVx8iPkJGPiu3rnpWamJGYy5PNyZCViZqWl5iMz5zl8_cPFEJr-e8ZOiBN_d3z909CP2v57xk6IE39.XOxwIPxd2XEwQs5op9uYwl4yEAzp6HH_T9Fbeyf2al_xeTjnUWs_4DZc8bBmKA3waTFfTiArUh1FC14DE8wDDw'
-
-print(yacloud.obtainIAMtoken(tokenJWT).content)
-
+print(encoded_token)
 
 
