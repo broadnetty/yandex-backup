@@ -8,7 +8,7 @@ def obtainIAMtoken(JWTtoken=None):
             headers = { 'Metadata-Flavor': 'Google' }
             r = requests.get(' http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token', headers=headers, timeout=5)
 
-        return r.text
+        return r.json("access_token")
     except:
         service_account_id = "ajegng4l26ojveihgs0c"
         key_id = "ajegng4l26ojveihgs0c"  # ID ресурса Key, который принадлежит сервисному аккаунту.
