@@ -4,6 +4,9 @@ from yacloud import yacloud
 
 encoded_token = yacloud.obtainIAMtoken()
 
-print(encoded_token)
+cloudId = yacloud.listClouds(encoded_token)['clouds'][0]['id']
+
+print(id)
+
 
 
