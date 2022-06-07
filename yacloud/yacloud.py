@@ -10,8 +10,7 @@ def obtainIAMtoken(JWTtoken=None):
 
         return r.text
     except:
-        return None
-"""        service_account_id = "ajegng4l26ojveihgs0c"
+        service_account_id = "ajegng4l26ojveihgs0c"
         key_id = "ajegng4l26ojveihgs0c"  # ID ресурса Key, который принадлежит сервисному аккаунту.
 
         with open("backup-account-key.pem", 'r') as private:
@@ -29,4 +28,4 @@ def obtainIAMtoken(JWTtoken=None):
             private_key,
             algorithm='PS256',
             headers={'kid': key_id})
-        return encoded_token"""
+        return encoded_token
