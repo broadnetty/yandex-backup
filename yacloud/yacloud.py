@@ -4,6 +4,7 @@ import time, jwt
 def obtainIAMtoken(JWTtoken=None):
     try:
         if JWTtoken == None:
+            print("obtaining token")
             headers = { 'Metadata-Flavor': 'Google' }
             r = requests.get(' http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token', headers=headers, timeout=5)
 
