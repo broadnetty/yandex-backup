@@ -7,8 +7,6 @@ def obtainIAMtoken(JWTtoken=None):
             headers = { 'Metadata-Flavor': 'Google' }
             r = requests.get(' http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token', headers=headers, timeout=2)
 
-        headers = {"Content-Type": 'application/json'}
-        r = requests.post('https://iam.api.cloud.yandex.net/iam/v1/tokens' , data={"jwt": JWTtoken})
         return r.text
     except:
         service_account_id = "ajegng4l26ojveihgs0c"
