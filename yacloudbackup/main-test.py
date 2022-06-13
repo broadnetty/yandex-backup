@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import requests
 from yacloud import yacloud
+
 yacm = yacloud.yacloudmanager()
 
 print(yacm.listClouds())
