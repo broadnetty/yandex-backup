@@ -1,9 +1,21 @@
 #!/usr/bin/python3
 from yacloud import yacloud
 
-yacm = yacloud.yacloudmanager()
+#yacm = yacloud.yacloudmanager()
 
-print(yacm.listClouds())
+#print(yacm.listClouds())
+
+def scanResources():
+    ya = yacloud.yacloudmanager()
+    folders = ya.listFolders(ya.listClouds()['clouds'][0]['id'])['folders']
+    for current_folderid in folders:
+        if current_folderid['name'] == 'mtop-test-cloud':
+            return ya.listInstances(current_folderid['id'])
+
+print(scanResources())
+
+
+
 """
 encoded_token = yacloud.obtainIAMtoken()
 

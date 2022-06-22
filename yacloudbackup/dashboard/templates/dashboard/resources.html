@@ -1,0 +1,36 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block title %}
+Cloud Resources
+{% endblock %}
+
+{% block header %}
+Resources Dashboard
+{% endblock %}
+
+{% block content %}
+
+{% if resources%}
+
+    {% for el in resources %}
+    <div class="alert alert-success mt-2">
+        <h3>
+            {{ el.VMName }}
+        </h3>
+        <p>
+            {{ el.VMid }}
+        </p>
+            {{ el.CloudId }}
+        </p>
+    </div>
+    {% endfor %}
+
+{% else %}
+    <p> No resource found</p>
+{% endif %}
+
+{% endblock %}
+
+{% block nav-resouces %} active {% endblock %}
+{% block nav-policies %}text-white{% endblock %}
+{% block nav-sessions %}text-white{% endblock %}

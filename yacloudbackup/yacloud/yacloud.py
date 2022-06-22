@@ -90,3 +90,4 @@ class yacloudmanager:
         r = requests.get('https://compute.api.cloud.yandex.net/compute/v1/instances', params={'folderId': folderId},
                          headers=self.headers, timeout=self.APItimeout)
         return r.json()
+
