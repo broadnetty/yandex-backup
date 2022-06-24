@@ -10,19 +10,35 @@ Resources Dashboard
 
 {% block content %}
 
-{% if resources%}
+{% if resources %}
 
-    {% for el in resources %}
-    <div class="alert alert-success mt-2">
-        <h3>
-            {{ el.VMName }}
-        </h3>
-        <p>
-            {{ el.VMid }}
-        </p>
-            {{ el.CloudId }}
-        </p>
-    </div>
+    {% for vm in resources %}
+
+    <table border="1px">
+        <tr>
+            <td>
+            Instance id
+            </td>
+            <td>
+            Instance Name
+            </td>
+            <td>
+            Zone
+            </td>
+        </tr>
+        <tr>
+            <td>
+            {{ vm.id }}
+            </td>
+            <td>
+            {{ vm.name }}
+            </td>
+            <td>
+            {{ vm.zoneId }}
+            </td>
+        </tr>
+
+    </table>
     {% endfor %}
 
 {% else %}
